@@ -5,33 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
 
     <div id="calculator">
-        <input id="display" readonly>
+        <div class="display" id="display">0</div>
 
         <div id="keys">
-            <button onclick="clearDisplay()" class="special">AC</button>
-            <button onclick="percent()" class="special">%</button>
-            <button onclick="backspace()" class="special">⌫</button>
-            <button onclick="display('/')" class="operatorBtn">/</button>
-            <button onclick="display('7')">7</button>
-            <button onclick="display('8')">8</button>
-            <button onclick="display('9')">9</button>
-            <button onclick="display('*')" class="operatorBtn">*</button>
-            <button onclick="display('4')">4</button>
-            <button onclick="display('5')">5</button>
-            <button onclick="display('6')">6</button>
-            <button onclick="display('-')" class="operatorBtn">-</button>
-            <button onclick="display('1')">1</button>
-            <button onclick="display('2')">2</button>
-            <button onclick="display('3')">3</button>
-            <button onclick="display('+')" class="operatorBtn">+</button>
-            <button onclick="display('0')" class="bigBtn">0</button>
-            <button onclick="display('.')">.</button>
-            <button onclick="operate()" class="operatorBtn">=</button>
+         
+            <button onclick="handleOperator('/')" class="operatorBtn" aria-label="divide"><i class="fa-solid fa-divide"></i></button>
+            <button onclick="percent()" class="special" aria-label="percent"><i class="fa-solid fa-percent"></i></button>
+            <button onclick="handleBackspace()" class="special" aria-label="backspace"><i class="fas fa-backspace"></i></button>
+            <button onclick="clearCalculator()" class="special" aria-label="clear"><i class="fas fa-undo"></i></button>
+            
+            <button onclick="handleOperator('*')" class="operatorBtn" aria-label="multiply"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="appendNumber('7')" aria-label="seven"><i class="fa-solid fa-7"></i></button>
+            <button onclick="appendNumber('8')" aria-label="eight"><i class="fa-solid fa-8"></i></button>
+            <button onclick="appendNumber('9')" aria-label="nine"><i class="fa-solid fa-9"></i></button>
+            
+            <button onclick="handleOperator('-')" class="operatorBtn" aria-label="subtract"><i class="fa-solid fa-minus"></i></button>  
+            <button onclick="appendNumber('4')" aria-label="four"><i class="fa-solid fa-4"></i></button>
+            <button onclick="appendNumber('5')" aria-label="five"><i class="fa-solid fa-5"></i></button>
+            <button onclick="appendNumber('6')" aria-label="six"><i class="fa-solid fa-6"></i></button>
+        
+            <button onclick="handleOperator('+')" class="operatorBtn" aria-label="add"><i class="fa-solid fa-plus"></i></button>
+            <button onclick="appendNumber('1')" aria-label="one"><i class="fa-solid fa-1"></i></button>
+            <button onclick="appendNumber('2')" aria-label="two"><i class="fa-solid fa-2"></i></button>
+            <button onclick="appendNumber('3')" aria-label="three"><i class="fa-solid fa-3"></i></button>
+        
+            <button onclick="calculate()" class="operatorBtn" aria-label="equals"><i class="fa-solid fa-equals"></i></button>        
+            <button onclick="appendNumber('0')" class="bigBtn" aria-label="zero"><i class="fa-solid fa-0"></i></button>
+            <button onclick="appendDecimal('.')" class="special" aria-label="decimal point">.</button>
         </div>
+        
     </div>
 
     <script src="script.js"></script>

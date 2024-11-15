@@ -1,96 +1,109 @@
-body{
-    margin:0;
-    display:flex;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh;
-    background-color: #f5f5f7;
-    font-family: Arial, sans-serif;
-}
-
-
-#calculator{
-    background-color: #333333;
-    border-radius:12px;
-    max-width:360px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 
-    0 2px 15px rgba(0, 0, 0, 0.1),
-    0 0 1px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+  }
+  
+  #calculator {
+    background-color: #2c3e50;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     padding: 20px;
-}
-
-#display{
-    width:100%;
-    height:110px;
-    padding: 20px 15px;
-    box-sizing: border-box;
-    font-size:2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-align:right;
-    border:none;
+    width: 320px;
+  }
+  
+  .display {
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 500;
+    height: 80px;
     margin-bottom: 20px;
-    background-color: transparent;
-    color: #f5f5f7;
-    box-shadow: inset 0 2px 5px hsla(0, 0%, 0%, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.special{
-    background-color: hsl(0, 0%, 40%);
-}
-
-.special:hover{
-    background-color: hsl(0, 0%, 45%);
-}
-
-
-#keys{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:1px;
-}
-
-
-button{
-    height:80px;
-    border:none;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    padding: 15px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  #keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    background-color: #34495e;
+    border: none;
+    border-radius: 10px;
+    color: #ecf0f1;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 60px;
     transition: all 0.2s ease;
-    color:white;
-    font-size:1.5rem;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:hover{
-    background-color: hsl(0, 0%, 70%, 0.5);
-}
-
-button:active{
-    transform: scale(0.95);
-    background-color: hsl(0, 0%, 80%,0.5);
-}
-
-.operatorBtn{
-    background-color: hsl(40, 90%, 50%);
-}
-
-.operatorBtn:hover{
-    background-color: hsl(40, 90%, 60%);
-}
-
-.operatorBtn:active{
-    background-color: hsl(40, 80%, 50%);
-}
-
-.bigBtn {
-    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #435d78;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  .operatorBtn {
+    background-color: #e67e22;
+  }
+  
+  .operatorBtn:hover {
+    background-color: #f39c12;
+  }
+  
+  .special {
+    background-color: #7f8c8d;
+  }
+  
+  .special:hover {
+    background-color: #95a5a6;
+  }
+  
+  .bigBtn {
     grid-column: span 2;
-}
+  }
+  
+
+  .fa-solid {
+    pointer-events: none;
+  }
+  
+
+  @media (max-width: 360px) {
+    #calculator {
+      width: 100%;
+      margin: 10px;
+      padding: 15px;
+    }
+    
+    button {
+      height: 50px;
+      font-size: 1.2rem;
+    }
+    
+    .display {
+      height: 70px;
+      font-size: 2rem;
+    }
+  }
 
 
